@@ -1,8 +1,8 @@
 {
-  "name": "@internal/analytics-react-native",
+  "name": "@segment/analytics-react-native",
+  "version": "1.4.9",
   "main": "index.js",
   "license": "MIT",
-  "private": true,
   "workspaces": {
     "packages": [
       "packages/*"
