@@ -290,6 +290,10 @@ class RNAnalyticsModule(context: ReactApplicationContext): ReactContextBaseJavaM
     @ReactMethod
     fun getAnonymousId(promise: Promise) =
             promise.resolve(analytics.getAnalyticsContext().traits().anonymousId())
+    
+    @ReactMethod
+    fun putDeviceToken(token: String) =
+            analytics.getAnalyticsContext().putDeviceToken(token)
 }
 
 private fun optionsFrom(context: ReadableMap?, integrations: ReadableMap?): Options {
