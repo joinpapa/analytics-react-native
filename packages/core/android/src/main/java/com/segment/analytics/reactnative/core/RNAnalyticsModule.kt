@@ -27,6 +27,7 @@ package com.segment.analytics.reactnative.core
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.util.Log
 import com.facebook.react.bridge.*
 import com.segment.analytics.internal.Utils.getSegmentSharedPreferences
 import java.util.concurrent.TimeUnit
@@ -34,6 +35,7 @@ import com.facebook.react.bridge.ReadableMap
 import com.segment.analytics.*
 import java.io.IOException
 import java.net.HttpURLConnection
+
 
 
 
@@ -294,6 +296,10 @@ class RNAnalyticsModule(context: ReactApplicationContext): ReactContextBaseJavaM
     @ReactMethod
     fun putDeviceToken(token: String) =
             analytics.getAnalyticsContext().putDeviceToken(token)
+
+    @ReactMethod
+    fun logDeviceToken(token: String) =
+            Log.d("logDeviceToken", token)
 }
 
 private fun optionsFrom(context: ReadableMap?, integrations: ReadableMap?): Options {
