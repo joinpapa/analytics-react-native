@@ -240,6 +240,7 @@ class RNAnalyticsModule(context: ReactApplicationContext): ReactContextBaseJavaM
 
     @ReactMethod
     fun identify(userId: String?, traits: ReadableMap?, options: ReadableMap?, integrations: ReadableMap?, context: ReadableMap?) {
+        Log.d("logIdentify", userId)
 
         val mergedTraits = if (options?.hasKey("anonymousId") == true) {
             val map = WritableNativeMap()
